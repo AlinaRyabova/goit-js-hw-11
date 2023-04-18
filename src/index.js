@@ -1,6 +1,14 @@
+import './css/styles.css';
+
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+import { createMarkup } from './js/createMarkup';
+import { PixabayAPI } from './js/PixabayAPI';
+import { refs } from './js/refs';
+import { notifyInit } from './js/notifyInit';
+import { spinnerPlay, spinnerStop } from './js/spinner';
 
 const modalLightboxGallery = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
@@ -39,7 +47,6 @@ const loadMorePhotos = async function (entries, observer) {
         const markup = createMarkup(hits);
         refs.gallery.insertAdjacentHTML('beforeend', markup);
 
-        // const showMore = pixaby.hasMorePhotos();
         if (pixaby.hasMorePhotos) {
           const lastItem = document.querySelector('.gallery a:last-child');
           observer.observe(lastItem);
@@ -104,14 +111,11 @@ const onSubmitClick = async event => {
     Notify.success(`Hooray! We found ${total} images.`, notifyInit);
 
     if (pixaby.hasMorePhotos) {
-      //refs.btnLoadMore.classList.remove('is-hidden');
-
       const lastItem = document.querySelector('.gallery a:last-child');
       observer.observe(lastItem);
     }
 
     modalLightboxGallery.refresh();
-    // scrollPage();
   } catch (error) {
     Notify.failure(error.message, 'Something went wrong!', notifyInit);
 
@@ -151,7 +155,6 @@ function clearPage() {
 refs.form.addEventListener('submit', onSubmitClick);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
 
-//  smooth scrolling
 function scrollPage() {
   const { height: cardHeight } = document
     .querySelector('.photo-gallery')
@@ -162,8 +165,6 @@ function scrollPage() {
     behavior: 'smooth',
   });
 }
-
-//Button smooth scroll up
 
 window.addEventListener('scroll', scrollFunction);
 
