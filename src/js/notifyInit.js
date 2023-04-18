@@ -5,5 +5,4 @@ export const notifyInit = {
   timeout: 1500,
   opacity: 0.8,
   fontSize: '16px',
-  //   borderRadius: '50px',
 };
