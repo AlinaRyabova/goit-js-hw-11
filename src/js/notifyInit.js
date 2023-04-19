@@ -1,6 +1,6 @@
 export const notifyInit = {
   width: '250px',
-  position: 'right-bottom',
+  position: 'right-top',
   distance: '20px',
   timeout: 1500,
   opacity: 0.8,
