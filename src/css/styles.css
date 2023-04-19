@@ -155,8 +155,8 @@ button.circle {
   outline: none;
   width: 100%;
   cursor: pointer;
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
   border-radius: 50px;
   background-color: transparent;
   box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
