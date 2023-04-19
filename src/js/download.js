@@ -1,12 +1,12 @@
 import { refs } from './refs';
 
-export function spinnerPlay() {
+export function downloadPlay() {
   refs.body.classList.add('loading');
 }
 
-export function spinnerStop() {
+export function downloadStop() {
   window.setTimeout(function () {
     refs.body.classList.remove('loading');
     refs.body.classList.add('loaded');
-  }, 1500);
+  }, 2000);
 }

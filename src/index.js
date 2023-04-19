@@ -8,18 +8,18 @@ import { createMarkup } from './js/createMarkup';
 import { PixabayAPI } from './js/PixabayAPI';
 import { refs } from './js/refs';
 import { notifyInit } from './js/notifyInit';
-import { spinnerPlay, spinnerStop } from './js/spinner';
+import { downloadPlay, downloadStop } from './js/download';
 
 const modalLightboxGallery = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-spinnerPlay();
+downloadPlay();
 
 window.addEventListener('load', () => {
   console.log('All resources finished loading!');
 
-  spinnerStop();
+  downloadStop();
 });
 
 refs.btnLoadMore.classList.add('is-hidden');
@@ -38,10 +38,10 @@ const loadMorePhotos = async function (entries, observer) {
       observer.unobserve(entry.target);
       pixaby.incrementPage();
 
-      spinnerPlay();
+      downloadPlay();
 
       try {
-        spinnerPlay();
+        downloadPlay();
 
         const { hits } = await pixaby.getPhotos();
         const markup = createMarkup(hits);
@@ -62,7 +62,7 @@ const loadMorePhotos = async function (entries, observer) {
         Notify.failure(error.message, 'Something went wrong!', notifyInit);
         clearPage();
       } finally {
-        spinnerStop();
+        downloadStop();
       }
     }
   });
@@ -92,7 +92,7 @@ const onSubmitClick = async event => {
   clearPage();
 
   try {
-    spinnerPlay();
+    downloadPlay();
     const { hits, total } = await pixaby.getPhotos();
 
     if (hits.length === 0) {
@@ -121,7 +121,7 @@ const onSubmitClick = async event => {
 
     clearPage();
   } finally {
-    spinnerStop();
+    downloadStop();
   }
 };
 
