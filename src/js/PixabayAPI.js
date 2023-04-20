@@ -20,11 +20,6 @@ export class PixabayAPI {
       safesearch: true,
     };
 
-    //   const urlAXIOS = `?key=${API_KEY}`;
-
-    //   const { data } = await axios.get(urlAXIOS, { params });
-    //   return data;
-    // }
     const urlAXIOS = `?key=${API_KEY}`;
 
     try {
