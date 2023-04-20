@@ -17,8 +17,7 @@ const modalLightboxGallery = new SimpleLightbox('.gallery a', {
 // downloadPlay();
 
 window.addEventListener('load', () => {
-  console.log('All resources finished loading!');
-
+  //   console.log('All resources finished loading!');
   //   downloadStop();
 });
 
