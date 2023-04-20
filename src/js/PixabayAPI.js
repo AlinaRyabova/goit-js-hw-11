@@ -20,10 +20,24 @@ export class PixabayAPI {
       safesearch: true,
     };
 
+    //   const urlAXIOS = `?key=${API_KEY}`;
+
+    //   const { data } = await axios.get(urlAXIOS, { params });
+    //   return data;
+    // }
     const urlAXIOS = `?key=${API_KEY}`;
 
-    const { data } = await axios.get(urlAXIOS, { params });
-    return data;
+    try {
+      const { data } = await axios.get(urlAXIOS, { params });
+      return data;
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        console.log('Error 404: Page not found');
+      } else {
+        console.log('Error', error.message);
+      }
+      throw error;
+    }
   }
 
   get query() {
