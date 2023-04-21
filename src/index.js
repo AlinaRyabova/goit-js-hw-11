@@ -144,7 +144,7 @@ refs.btnLoadMore.addEventListener('click', onLoadMore);
 
 function scrollPage() {
   const photoGalleryEl = document.querySelector('.gallery');
-  if (!photoGalleryEl > total) {
+  if (photoGalleryEl > total) {
     window.removeEventListener('scroll', scrollFunction);
     return;
   }
