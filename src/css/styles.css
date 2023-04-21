@@ -276,7 +276,7 @@ button.circle {
   fill: #ae1100;
 }
 
-.preloader {
+/* .preloader {
   position: fixed;
   left: 0;
   top: 0;
@@ -297,9 +297,9 @@ button.circle {
 .loaded_hiding .preloader {
   transition: 0.3s opacity;
   opacity: 0;
-}
+} */
 
-.loaded .preloader {
+/* .loaded .preloader {
   display: none;
 }
 
@@ -317,4 +317,4 @@ button.circle {
   border-top: 10px solid #fff;
   border-right: 10px solid transparent;
   animation: rotation 1s linear infinite;
-}
+} */
