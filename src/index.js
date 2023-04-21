@@ -136,6 +136,7 @@ function clearPage() {
   pixaby.resetPage();
   refs.gallery.innerHTML = '';
   refs.btnLoadMore.classList.add('is-hidden');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 refs.form.addEventListener('submit', onSubmitClick);
