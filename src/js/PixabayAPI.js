@@ -46,7 +46,7 @@ export class PixabayAPI {
     this.#totalPages = total;
   }
 
-  // hasMorePhotos() {
-  //   return this.#page < Math.ceil(this.#totalPages / this.#per_page);
-  // }
+  hasMorePhotos() {
+    return this.#page < Math.ceil(this.#totalPages / this.#per_page);
+  }
 }
