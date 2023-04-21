@@ -13,10 +13,6 @@ const modalLightboxGallery = new SimpleLightbox('.gallery a', {
   captionDelay: 250,
 });
 
-// window.addEventListener('load', () => {
-//   console.log('All resources finished loading!');
-// });
-
 refs.btnLoadMore.classList.add('is-hidden');
 
 const pixaby = new PixabayAPI();
