@@ -37,16 +37,18 @@ const loadMorePhotos = async function (entries, observer) {
         if (pixaby.hasMorePhotos) {
           const lastItem = document.querySelector('.gallery a:last-child');
           observer.observe(lastItem);
-        } else
+        } else {
           Notify.info(
             "We're sorry, but you've reached the end of search results.",
             notifyInit
           );
+          const lastItem = document.querySelector('.gallery a:last-child');
+          observer.unobserve(lastItem);
+        }
 
         modalLightboxGallery.refresh();
         scrollPage();
       } catch (error) {
-        // Notify.failure(error.message, 'Something went wrong!', notifyInit);
         clearPage();
       } finally {
       }
@@ -140,9 +142,14 @@ refs.form.addEventListener('submit', onSubmitClick);
 refs.btnLoadMore.addEventListener('click', onLoadMore);
 
 function scrollPage() {
-  const { height: cardHeight } = document
-    .querySelector('.photo-gallery')
-    .firstElementChild.getBoundingClientRect();
+  const photoGalleryEl = document.querySelector('.gallery');
+  if (!photoGalleryEl > total) {
+    window.removeEventListener('scroll', scrollFunction);
+    return;
+  }
+
+  const { height: cardHeight } =
+    photoGalleryEl.firstElementChild.getBoundingClientRect();
 
   window.scrollBy({
     top: cardHeight * 2,
@@ -159,6 +166,7 @@ function scrollFunction() {
     refs.btnUpWrapper.style.display = 'none';
   }
 }
+
 refs.btnUp.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
