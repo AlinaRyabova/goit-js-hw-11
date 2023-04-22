@@ -131,16 +131,11 @@ btnLoadMore.addEventListener('click', async () => {
     if (page >= totalPages) {
       btnLoadMore.classList.remove('is-visible');
     }
-
-    console.log('results', results);
   } catch (error) {
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
   }
-
-  //   console.log('btnLoadMore working');
-  //   console.log('');
 });
 
 async function fetchPhotos(searchQueryResult) {
