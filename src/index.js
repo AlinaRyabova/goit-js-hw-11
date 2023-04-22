@@ -1,5 +1,5 @@
 import './css/styles.css';
-// import { createMarkup } from './js/createMarkup';
+
 import { Notify } from 'notiflix';
 const axios = require('axios').default;
 
