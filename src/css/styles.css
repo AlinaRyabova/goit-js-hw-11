@@ -163,43 +163,6 @@ a {
   text-shadow: 1px 1px 1px #fff;
 }
 
-.info-item-likes {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.box-likes {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-button.circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  border: none;
-  outline: none;
-  width: 100%;
-  cursor: pointer;
-  width: 45px;
-  height: 45px;
-  border-radius: 50px;
-  background-color: transparent;
-  box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
-}
-
-.bi {
-  width: 15px;
-  color: #fff;
-}
-
-.red {
-  color: #ff0000;
-}
-
 .is-visible {
   visibility: hidden;
   opacity: 0;
@@ -258,38 +221,4 @@ button.circle {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-}
-
-.btn-up {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  bottom: 20px;
-  right: 30px;
-  z-index: 99;
-  border: none;
-  width: 100px;
-  height: 100px;
-}
-
-.btn-up-text {
-  margin-bottom: 15px;
-  font-family: inherit;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  color: #ae1100;
-}
-
-.btn-up-wrapper__btn {
-  padding: 20px;
-  outline: none;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-}
-
-.icon-arrow {
-  fill: #ae1100;
 }
