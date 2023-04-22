@@ -94,15 +94,11 @@ searchForm.addEventListener('submit', async e => {
     }
 
     Notify.success(`'Hooray! We found ${results.totalHits} images.'`);
-
-    // console.log('results', results);
   } catch (error) {
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
   }
-
-  //   console.log('');
 });
 
 const btnLoadMore = document.querySelector('.load-more');
