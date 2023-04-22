@@ -45,7 +45,7 @@ searchForm.addEventListener('submit', async e => {
   if (searchQueryResult === '') {
     gallerySelector.innerHTML = '';
     btnLoadMore.classList.remove('is-visible');
-
+    clearBtnload();
     return Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
