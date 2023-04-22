@@ -218,6 +218,7 @@ button.circle {
 .load-more-btn {
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 10px 20px;
   max-width: 150px;
