@@ -89,7 +89,7 @@ searchForm.addEventListener('submit', async e => {
     const { total, totalHits, hits } = results;
     const totalPages = Math.ceil(totalHits / per_page);
 
-    if (page >= totalPages) {
+    if (page <= totalPages) {
       btnLoadMore.classList.remove('is-visible');
     }
 
@@ -128,7 +128,7 @@ btnLoadMore.addEventListener('click', async () => {
     const { total, totalHits, hits } = results;
     const totalPages = Math.ceil(totalHits / per_page);
 
-    if (page >= totalPages) {
+    if (page < totalPages) {
       btnLoadMore.classList.remove('is-visible');
     }
   } catch (error) {
