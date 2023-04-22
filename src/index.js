@@ -157,16 +157,10 @@ async function fetchPhotos(searchQueryResult) {
 
   pixabayAPI.page = `${pageN}`;
 
-  //   console.log('page', page);
-
   const response = await axios.get(
     `${baseUrl}?key=${key}&q=${q}&image_type=${image_type}&orientation=${orientation}&safesearch=${safesearch}&order=${order}&page=${page}&per_page=${per_page}`
   );
   const results = response.data;
-  //   console.log('response.data', response.data);
-
-  //   console.log('response', response);
-  //   console.log('page', page);
 
   const { total, totalHits, hits } = results;
   const totalPages = Math.ceil(totalHits / per_page);
@@ -182,11 +176,6 @@ async function fetchPhotos(searchQueryResult) {
     );
     return results;
   }
-
-  //   console.log('totalHits', totalHits);
-  //   console.log('per_page', per_page);
-
-  //   console.log('totalPages=', totalPages);
 
   return results;
 }
