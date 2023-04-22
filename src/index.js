@@ -43,7 +43,6 @@ searchForm.addEventListener('submit', async e => {
   searchQueryResult = searchQuery.value;
 
   if (searchQueryResult === '') {
-    console.log(searchQueryResult);
     gallerySelector.innerHTML = '';
     btnLoadMore.classList.remove('is-visible');
 
@@ -95,6 +94,7 @@ searchForm.addEventListener('submit', async e => {
 
     Notify.success(`'Hooray! We found ${results.totalHits} images.'`);
   } catch (error) {
+    clearBtnload();
     Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
@@ -203,4 +203,8 @@ async function createMarkup(results) {
     .join('');
 
   return markupData.markup;
+}
+
+function clearBtnload() {
+  btnLoadMore.classList.add('is-visible');
 }
