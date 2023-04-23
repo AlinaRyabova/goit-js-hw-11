@@ -44,8 +44,7 @@ searchForm.addEventListener('submit', async e => {
 
   if (searchQueryResult === '') {
     gallerySelector.innerHTML = '';
-    btnLoadMore.classList.remove('is-visible');
-    clearBtnload();
+
     return Notify.failure(
       'Sorry, there are no images matching your search query. Please try again.'
     );
@@ -71,7 +70,6 @@ searchForm.addEventListener('submit', async e => {
     markupData.htmlCode = await createMarkup(results);
 
     gallerySelector.insertAdjacentHTML('beforeend', markupData.htmlCode);
-    btnLoadMore.classList.add('is-visible');
 
     gallery.refresh();
 
@@ -165,7 +163,6 @@ async function fetchPhotos(searchQueryResult) {
   }
 
   if (page >= totalPages) {
-    btnLoadMore.classList.remove('is-visible');
     Notify.failure(
       "We're sorry, but you've reached the end of search results."
     );
